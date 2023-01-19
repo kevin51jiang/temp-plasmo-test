@@ -1,8 +1,11 @@
 import type { PlasmoContentScript, PlasmoCSUIProps, PlasmoGetInlineAnchor, PlasmoGetInlineAnchorList } from "plasmo"
 
-export const getInlineAnchorList: PlasmoGetInlineAnchorList = async () =>
-  document.querySelectorAll(`div`)
+export const getInlineAnchorList: PlasmoGetInlineAnchorList = async () =>{
+  const elems = document.querySelectorAll(`div`)
+  console.log("Elems", elems)
 
+  return elems
+}
 
 export const config: PlasmoContentScript = {
   matches: ["<all_urls>","http://*/*", "https://*/*"],
